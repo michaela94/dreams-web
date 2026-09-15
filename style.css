@@ -1,0 +1,650 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+body {
+    width: 100%;
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding: 0 clamp(16px, 3vw, 32px);
+
+    background: #0f0b16;
+    color: #e8e2ed;
+
+    font-family: "Inter", Arial, sans-serif;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   HEADER + NAVIGATION
+========================= */
+
+header {
+    width: 100%;
+}
+
+
+.top-bar {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 20px;
+
+    padding: 18px 0;
+}
+
+
+nav {
+    display: flex;
+
+    align-items: center;
+
+    gap: 3px;
+
+    padding: 6px;
+
+    background: rgba(22, 18, 31, 0.95);
+
+    border: 1px solid #3a3147;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+    backdrop-filter: blur(10px);
+}
+
+
+nav a {
+    position: relative;
+
+    display: block;
+
+    padding: 9px 14px;
+
+    color: #a9a1b2;
+
+    text-decoration: none;
+
+    font-family: "Inter", Arial, sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    border-radius: 7px;
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+nav a:hover {
+    color: #ffffff;
+
+    background: #251e31;
+
+    transform: translateY(-1px);
+}
+
+
+nav a.active {
+    color: #ffffff;
+
+    background: #342943;
+
+    box-shadow:
+        inset 0 0 0 1px rgba(167, 139, 250, 0.15),
+        0 2px 8px rgba(0, 0, 0, 0.18);
+}
+
+
+nav a.active:hover {
+    background: #3b2e4d;
+}
+
+
+/* =========================
+   HAMBURGER MENU
+========================= */
+
+.menu-button {
+    display: none;
+
+    width: 48px;
+    height: 48px;
+
+    padding: 0;
+
+    background: #161b22;
+
+    border: 1px solid #30363d;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+
+.menu-button span {
+    display: block;
+
+    width: 20px;
+    height: 2px;
+
+    background: #8b949e;
+
+    border-radius: 2px;
+
+    transition: 0.2s ease;
+}
+
+
+.menu-button:hover {
+    background: #21262d;
+}
+
+
+.menu-button:hover span {
+    background: #ffffff;
+}
+
+
+/* =========================
+   COVER
+========================= */
+
+.cover {
+    position: relative;
+
+    width: 100%;
+
+    height: clamp(280px, 45vw, 430px);
+
+    margin-top: 10px;
+
+    background:
+        linear-gradient(
+            rgba(20, 10, 30, 0.15),
+            rgba(20, 10, 30, 0.30)
+        ),
+        url("logo.jpg") center / cover no-repeat;
+
+    background-color: #17121f;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+}
+
+
+.badge {
+    position: absolute;
+
+    right: clamp(20px, 5vw, 60px);
+
+    bottom: clamp(20px, 5vw, 60px);
+
+    width: clamp(100px, 15vw, 150px);
+
+    aspect-ratio: 1 / 1;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: rgba(20, 15, 30, 0.75);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    border-radius: 50%;
+
+    color: #ffffff;
+
+    font-family: "DM Serif Display", Georgia, serif;
+
+    font-size: clamp(16px, 2vw, 24px);
+
+    letter-spacing: 3px;
+
+    backdrop-filter: blur(8px);
+}
+
+
+/* =========================
+   ARTICLE
+========================= */
+
+.post {
+    max-width: 850px;
+
+    margin: 70px auto 0;
+}
+
+
+.category {
+    margin-bottom: 10px;
+
+    color: #a78bfa;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+h1 {
+    margin-bottom: 20px;
+
+    color: #ffffff;
+
+    font-family: "DM Serif Display", Georgia, serif;
+
+    font-size: clamp(40px, 6vw, 72px);
+
+    line-height: 1.05;
+
+    font-weight: 400;
+}
+
+
+.intro {
+    max-width: 750px;
+
+    margin-bottom: 45px;
+
+    color: #bdb5c7;
+
+    font-size: clamp(18px, 2vw, 22px);
+}
+
+
+.content {
+    font-size: 17px;
+}
+
+
+.content p {
+    margin-bottom: 25px;
+
+    color: #c9c2d0;
+}
+
+
+.content h2 {
+    margin-top: 55px;
+
+    margin-bottom: 20px;
+
+    color: #ffffff;
+
+    font-family: "DM Serif Display", Georgia, serif;
+
+    font-size: clamp(28px, 4vw, 40px);
+
+    line-height: 1.2;
+
+    font-weight: 400;
+}
+
+
+/* =========================
+   SIDE QUOTES
+========================= */
+
+.pullquote {
+    width: 36%;
+
+    padding: 20px 24px;
+
+    margin-top: 8px;
+
+    margin-bottom: 20px;
+
+    background: #17121f;
+
+    border-top: 1px solid #30283b;
+
+    border-bottom: 1px solid #30283b;
+
+    color: #eee8f4;
+
+    font-family: "DM Serif Display", Georgia, serif;
+
+    font-size: 20px;
+
+    line-height: 1.4;
+
+    position: relative;
+}
+
+
+.pullquote q {
+    quotes: "“" "”";
+}
+
+
+.pullquote q::before,
+.pullquote q::after {
+    color: #a78bfa;
+}
+
+
+.float-left {
+    float: left;
+
+    margin-left: -110px;
+
+    margin-right: 32px;
+}
+
+
+.float-right {
+    float: right;
+
+    margin-right: -110px;
+
+    margin-left: 32px;
+}
+
+
+/* =========================
+   AUTHOR
+========================= */
+
+.author {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    max-width: 850px;
+
+    margin: 80px auto 0;
+
+    padding-top: 30px;
+
+    border-top: 1px solid #30283b;
+}
+
+
+.author img {
+    width: clamp(60px, 8vw, 80px);
+
+    height: clamp(60px, 8vw, 80px);
+
+    object-fit: cover;
+
+    border-radius: 50%;
+}
+
+
+.author-label {
+    margin-bottom: 4px;
+
+    color: #a78bfa;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+.author h3 {
+    margin-bottom: 4px;
+
+    color: #ffffff;
+
+    font-size: 18px;
+}
+
+
+.author p:last-child {
+    color: #968da0;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 30px 0;
+
+    border-top: 1px solid #30283b;
+
+    text-align: center;
+
+    color: #746c7d;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1023px) {
+
+    nav a {
+        padding: 8px 9px;
+
+        font-size: 13px;
+    }
+
+
+    .pullquote {
+        width: 32%;
+
+        font-size: 18px;
+    }
+
+
+    .float-left {
+        margin-left: -30px;
+
+        margin-right: 25px;
+    }
+
+
+    .float-right {
+        margin-right: -30px;
+
+        margin-left: 25px;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 767px) {
+
+    .top-bar {
+        position: relative;
+
+        display: flex;
+
+        justify-content: flex-end;
+
+        flex-wrap: wrap;
+    }
+
+
+    .menu-button {
+        display: flex;
+    }
+
+
+    nav {
+        display: none;
+
+        width: 100%;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        margin-top: 5px;
+
+        padding: 6px;
+
+        border-radius: 8px;
+    }
+
+
+    nav.open {
+        display: flex;
+    }
+
+
+    nav a {
+        width: 100%;
+
+        padding: 12px;
+
+        text-align: left;
+
+        font-size: 14px;
+    }
+
+
+    .cover {
+        height: 300px;
+
+        border-radius: 10px;
+    }
+
+
+    .badge {
+        width: 95px;
+
+        right: 20px;
+
+        bottom: 20px;
+
+        font-size: 14px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .post {
+        margin-top: 45px;
+    }
+
+
+    h1 {
+        font-size: clamp(38px, 11vw, 55px);
+    }
+
+
+    .intro {
+        margin-bottom: 35px;
+
+        font-size: 18px;
+    }
+
+
+    .content {
+        font-size: 16px;
+    }
+
+
+    .content h2 {
+        margin-top: 40px;
+    }
+
+
+    /* Quotes on mobile */
+
+    .pullquote,
+    .float-left,
+    .float-right {
+        float: none;
+
+        width: 100%;
+
+        margin: 35px 0;
+    }
+
+
+    .pullquote {
+        padding: 20px;
+
+        font-size: 20px;
+    }
+
+
+    .author {
+        margin-top: 55px;
+    }
+}
+
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width: 400px) {
+
+    body {
+        padding: 0 12px;
+    }
+
+
+    .cover {
+        height: 260px;
+    }
+
+
+    .menu-button {
+        width: 44px;
+
+        height: 44px;
+    }
+
+
+    .pullquote {
+        padding: 18px;
+
+        font-size: 19px;
+    }
+}
